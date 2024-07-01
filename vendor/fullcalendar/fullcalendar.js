@@ -1087,7 +1087,7 @@ function Header(calendar, options) {
 				.append(renderSection('left'))
 				.append(renderSection('right'))
 				.append(renderSection('center'))
-				.append('<div class="fc-clear"/>');
+				.append('<div class="tajawal_black fc-clear"/>');
 
 			return el;
 		}
@@ -1100,7 +1100,7 @@ function Header(calendar, options) {
 	
 	
 	function renderSection(position) {
-		var sectionEl = $('<div class="fc-' + position + '"/>');
+		var sectionEl = $('<div class="tajawal_black fc-' + position + '"/>');
 		var buttonStr = options.header[position];
 
 		if (buttonStr) {
@@ -1163,7 +1163,7 @@ function Header(calendar, options) {
 							];
 
 							button = $( // type="button" so that it doesn't submit a form
-								'<button type="button" class="' + classes.join(' ') + '">' +
+								'<button type="button" class="tajawal_black ' + classes.join(' ') + '">' +
 									innerHtml +
 								'</button>'
 								)
@@ -3415,7 +3415,7 @@ Popover.prototype = {
 		var _this = this;
 		var options = this.options;
 
-		this.el = $('<div class="fc-popover"/>')
+		this.el = $('<div class="tajawal_black fc-popover"/>')
 			.addClass(options.className || '')
 			.css({
 				// position initially to the top left to avoid creating scrollbars
@@ -4736,7 +4736,7 @@ $.extend(Grid.prototype, {
 		var styles = stylesMethod ? stylesMethod.call(this, seg) : ''; // a semi-colon separated CSS property string
 
 		return '<' + this.fillSegTag +
-			(classes.length ? ' class="' + classes.join(' ') + '"' : '') +
+			(classes.length ? ' class="tajawal_black ' + classes.join(' ') + '"' : '') +
 			(styles ? ' style="' + styles + '"' : '') +
 			' />';
 	},
@@ -4749,7 +4749,7 @@ $.extend(Grid.prototype, {
 	// Renders a day-of-week header row
 	headHtml: function() {
 		return '' +
-			'<div class="fc-row ' + this.view.widgetHeaderClass + '">' +
+			'<div class="tajawal_black fc-row ' + this.view.widgetHeaderClass + '">' +
 				'<table>' +
 					'<thead>' +
 						this.rowHtml('head') + // leverages RowRenderer
@@ -4766,7 +4766,7 @@ $.extend(Grid.prototype, {
 		var colFormat = view.opt('columnFormat');
 
 		return '' +
-			'<th class="fc-day-header ' + view.widgetHeaderClass + ' fc-' + dayIDs[date.day()] + '">' +
+			'<th class="tajawal_black fc-day-header ' + view.widgetHeaderClass + ' fc-' + dayIDs[date.day()] + '">' +
 				htmlEscape(calendar.formatDate(date, colFormat)) +
 			'</th>';
 	},
@@ -4779,7 +4779,7 @@ $.extend(Grid.prototype, {
 
 		classes.unshift('fc-day', view.widgetContentClass);
 
-		return '<td class="' + classes.join(' ') + '" data-date="' + date.format() + '"></td>';
+		return '<td class="tajawal_black ' + classes.join(' ') + '" data-date="' + date.format() + '"></td>';
 	},
 
 
@@ -5585,13 +5585,13 @@ $.extend(DayGrid.prototype, {
 		}
 
 		return '' +
-			'<div class="' + classes.join(' ') + '">' +
-				'<div class="fc-bg">' +
+			'<div class="tajawal_black ' + classes.join(' ') + '">' +
+				'<div class="tajawal_black fc-bg">' +
 					'<table>' +
 						this.rowHtml('day', row) + // leverages RowRenderer. calls dayCellHtml()
 					'</table>' +
 				'</div>' +
-				'<div class="fc-content-skeleton">' +
+				'<div class="tajawal_black fc-content-skeleton">' +
 					'<table>' +
 						(this.numbersVisible ?
 							'<thead>' +
@@ -5736,7 +5736,7 @@ $.extend(DayGrid.prototype, {
 		// inject each new event skeleton into each associated row
 		this.rowEls.each(function(row, rowNode) {
 			var rowEl = $(rowNode); // the .fc-row
-			var skeletonEl = $('<div class="fc-helper-skeleton"><table/></div>'); // will be absolutely positioned
+			var skeletonEl = $('<div class="tajawal_black fc-helper-skeleton"><table/></div>'); // will be absolutely positioned
 			var skeletonTop;
 
 			// If there is an original segment, match the top position. Otherwise, put it at the row's top level
@@ -5806,7 +5806,7 @@ $.extend(DayGrid.prototype, {
 		var trEl;
 
 		skeletonEl = $(
-			'<div class="fc-' + type.toLowerCase() + '-skeleton">' +
+			'<div class="tajawal_black fc-' + type.toLowerCase() + '-skeleton">' +
 				'<table><tr/></table>' +
 			'</div>'
 		);
@@ -5938,15 +5938,15 @@ $.extend(DayGrid.prototype, {
 
 		// Only display a timed events time if it is the starting segment
 		if (!event.allDay && seg.isStart) {
-			timeHtml = '<span class="fc-time">' + htmlEscape(view.getEventTimeText(event)) + '</span>';
+			timeHtml = '<span class="tajawal_black fc-time">' + htmlEscape(view.getEventTimeText(event)) + '</span>';
 		}
 
 		titleHtml =
-			'<span class="fc-title">' +
+			'<span class="tajawal_black fc-title">' +
 				(htmlEscape(event.title || '') || '&nbsp;') + // we always want one line of height
 			'</span>';
 		
-		return '<a class="' + classes.join(' ') + '"' +
+		return '<a class="tajawal_black ' + classes.join(' ') + '"' +
 				(event.url ?
 					' href="' + htmlEscape(event.url) + '"' :
 					''
@@ -5956,14 +5956,14 @@ $.extend(DayGrid.prototype, {
 					''
 					) +
 			'>' +
-				'<div class="fc-content">' +
+				'<div class="tajawal_black fc-content">' +
 					(isRTL ?
 						titleHtml + ' ' + timeHtml : // put a natural space in between
 						timeHtml + ' ' + titleHtml   //
 						) +
 				'</div>' +
 				(isResizable ?
-					'<div class="fc-resizer"/>' :
+					'<div class="tajawal_black fc-resizer"/>' :
 					''
 					) +
 			'</a>';
@@ -6026,7 +6026,7 @@ $.extend(DayGrid.prototype, {
 					emptyCellsUntil(seg.leftCol);
 
 					// create a container that occupies or more columns. append the event element.
-					td = $('<td class="fc-event-container"/>').append(seg.el);
+					td = $('<td class="tajawal_black fc-event-container"/>').append(seg.el);
 					if (seg.leftCol != seg.rightCol) {
 						td.attr('colspan', seg.rightCol - seg.leftCol + 1);
 					}
@@ -6275,7 +6275,7 @@ $.extend(DayGrid.prototype, {
 
 					// make a replacement <td> for each column the segment occupies. will be one for each colspan
 					for (j = 0; j < colSegsBelow.length; j++) {
-						moreTd = $('<td class="fc-more-cell"/>').attr('rowspan', rowspan);
+						moreTd = $('<td class="tajawal_black fc-more-cell"/>').attr('rowspan', rowspan);
 						segsBelow = colSegsBelow[j];
 						cell = { row: row, col: seg.leftCol + j };
 						moreLink = this.renderMoreLink(cell, [ seg ].concat(segsBelow)); // count seg as hidden too
@@ -6320,7 +6320,7 @@ $.extend(DayGrid.prototype, {
 		var _this = this;
 		var view = this.view;
 
-		return $('<a class="fc-more"/>')
+		return $('<a class="tajawal_black fc-more"/>')
 			.text(
 				this.getMoreLinkText(hiddenSegs.length)
 			)
@@ -6406,17 +6406,17 @@ $.extend(DayGrid.prototype, {
 		var isTheme = view.opt('theme');
 		var title = date.format(view.opt('dayPopoverFormat'));
 		var content = $(
-			'<div class="fc-header ' + view.widgetHeaderClass + '">' +
-				'<span class="fc-close ' +
+			'<div class="tajawal_black fc-header ' + view.widgetHeaderClass + '">' +
+				'<span class="tajawal_black fc-close ' +
 					(isTheme ? 'ui-icon ui-icon-closethick' : 'fc-icon fc-icon-x') +
 				'"></span>' +
-				'<span class="fc-title">' +
+				'<span class="tajawal_black fc-title">' +
 					htmlEscape(title) +
 				'</span>' +
-				'<div class="fc-clear"/>' +
+				'<div class="tajawal_black fc-clear"/>' +
 			'</div>' +
-			'<div class="fc-body ' + view.widgetContentClass + '">' +
-				'<div class="fc-event-container"></div>' +
+			'<div class="tajawal_black fc-body ' + view.widgetContentClass + '">' +
+				'<div class="tajawal_black fc-event-container"></div>' +
 			'</div>'
 		);
 		var segContainer = content.find('.fc-event-container');
@@ -6552,12 +6552,12 @@ $.extend(TimeGrid.prototype, {
 	// Renders the basic HTML skeleton for the grid
 	renderHtml: function() {
 		return '' +
-			'<div class="fc-bg">' +
+			'<div class="tajawal_black fc-bg">' +
 				'<table>' +
 					this.rowHtml('slotBg') + // leverages RowRenderer, which will call slotBgCellHtml
 				'</table>' +
 			'</div>' +
-			'<div class="fc-slats">' +
+			'<div class="tajawal_black fc-slats">' +
 				'<table>' +
 					this.slatRowHtml() +
 				'</table>' +
@@ -6590,7 +6590,7 @@ $.extend(TimeGrid.prototype, {
 			minutes = slotDate.minutes();
 
 			axisHtml =
-				'<td class="fc-axis fc-time ' + view.widgetContentClass + '" ' + view.axisStyleAttr() + '>' +
+				'<td class="tajawal_black fc-axis fc-time ' + view.widgetContentClass + '" ' + view.axisStyleAttr() + '>' +
 					((!slotNormal || !minutes) ? // if irregular slot duration, or on the hour, then display the time
 						'<span>' + // for matchCellWidths
 							htmlEscape(calendar.formatDate(slotDate, view.opt('axisFormat'))) +
@@ -6600,9 +6600,9 @@ $.extend(TimeGrid.prototype, {
 				'</td>';
 
 			html +=
-				'<tr ' + (!minutes ? '' : 'class="fc-minor"') + '>' +
+				'<tr ' + (!minutes ? '' : 'class="tajawal_black fc-minor"') + '>' +
 					(!isRTL ? axisHtml : '') +
-					'<td class="' + view.widgetContentClass + '"/>' +
+					'<td class="tajawal_black ' + view.widgetContentClass + '"/>' +
 					(isRTL ? axisHtml : '') +
 				"</tr>";
 
@@ -6856,7 +6856,7 @@ $.extend(TimeGrid.prototype, {
 			}
 		}
 
-		this.helperEl = $('<div class="fc-helper-skeleton"/>')
+		this.helperEl = $('<div class="tajawal_black fc-helper-skeleton"/>')
 			.append(tableEl)
 				.appendTo(this.el);
 	},
@@ -6917,7 +6917,7 @@ $.extend(TimeGrid.prototype, {
 
 			className = className || type.toLowerCase();
 			skeletonEl = $(
-				'<div class="fc-' + className + '-skeleton">' +
+				'<div class="tajawal_black fc-' + className + '-skeleton">' +
 					'<table><tr/></table>' +
 				'</div>'
 			);
@@ -6928,7 +6928,7 @@ $.extend(TimeGrid.prototype, {
 				tdEl = $('<td/>').appendTo(trEl);
 
 				if (colSegs.length) {
-					containerEl = $('<div class="fc-' + className + '-container"/>').appendTo(tdEl);
+					containerEl = $('<div class="tajawal_black fc-' + className + '-container"/>').appendTo(tdEl);
 					dayDate = view.cellToDate(0, col);
 
 					for (i = 0; i < colSegs.length; i++) {
@@ -6969,7 +6969,7 @@ $.extend(TimeGrid.prototype, {
 		segs = this.renderFgSegEls(segs); // returns a subset of the segs. segs that were actually rendered
 
 		this.el.append(
-			this.eventSkeletonEl = $('<div class="fc-content-skeleton"/>')
+			this.eventSkeletonEl = $('<div class="tajawal_black fc-content-skeleton"/>')
 				.append(this.renderSegTable(segs))
 		);
 
@@ -7004,7 +7004,7 @@ $.extend(TimeGrid.prototype, {
 			colSegs = segCols[col];
 			placeSlotSegs(colSegs); // compute horizontal coordinates, z-index's, and reorder the array
 
-			containerEl = $('<div class="fc-event-container"/>');
+			containerEl = $('<div class="tajawal_black fc-event-container"/>');
 
 			// assign positioning CSS and insert into container
 			for (i = 0; i < colSegs.length; i++) {
@@ -7086,7 +7086,7 @@ $.extend(TimeGrid.prototype, {
 			startTimeText = view.getEventTimeText(event.start, null);
 		}
 
-		return '<a class="' + classes.join(' ') + '"' +
+		return '<a class="tajawal_black ' + classes.join(' ') + '"' +
 			(event.url ?
 				' href="' + htmlEscape(event.url) + '"' :
 				''
@@ -7096,9 +7096,9 @@ $.extend(TimeGrid.prototype, {
 				''
 				) +
 			'>' +
-				'<div class="fc-content">' +
+				'<div class="tajawal_black fc-content">' +
 					(timeText ?
-						'<div class="fc-time"' +
+						'<div class="tajawal_black fc-time"' +
 						' data-start="' + htmlEscape(startTimeText) + '"' +
 						' data-full="' + htmlEscape(fullTimeText) + '"' +
 						'>' +
@@ -7107,15 +7107,15 @@ $.extend(TimeGrid.prototype, {
 						''
 						) +
 					(event.title ?
-						'<div class="fc-title">' +
+						'<div class="tajawal_black fc-title">' +
 							htmlEscape(event.title) +
 						'</div>' :
 						''
 						) +
 				'</div>' +
-				'<div class="fc-bg"/>' +
+				'<div class="tajawal_black fc-bg"/>' +
 				(isResizable ?
-					'<div class="fc-resizer"/>' :
+					'<div class="tajawal_black fc-resizer"/>' :
 					''
 					) +
 			'</a>';
@@ -8351,16 +8351,16 @@ $.extend(BasicView.prototype, {
 			'<table>' +
 				'<thead>' +
 					'<tr>' +
-						'<td class="' + this.widgetHeaderClass + '">' +
+						'<td class="tajawal_black ' + this.widgetHeaderClass + '">' +
 							this.dayGrid.headHtml() + // render the day-of-week headers
 						'</td>' +
 					'</tr>' +
 				'</thead>' +
 				'<tbody>' +
 					'<tr>' +
-						'<td class="' + this.widgetContentClass + '">' +
-							'<div class="fc-day-grid-container">' +
-								'<div class="fc-day-grid"/>' +
+						'<td class="tajawal_black ' + this.widgetContentClass + '">' +
+							'<div class="tajawal_black fc-day-grid-container">' +
+								'<div class="tajawal_black fc-day-grid"/>' +
 							'</div>' +
 						'</td>' +
 					'</tr>' +
@@ -8374,7 +8374,7 @@ $.extend(BasicView.prototype, {
 	headIntroHtml: function() {
 		if (this.weekNumbersVisible) {
 			return '' +
-				'<th class="fc-week-number ' + this.widgetHeaderClass + '" ' + this.weekNumberStyleAttr() + '>' +
+				'<th class="tajawal_black fc-week-number ' + this.widgetHeaderClass + '" ' + this.weekNumberStyleAttr() + '>' +
 					'<span>' + // needed for matchCellWidths
 						htmlEscape(this.opt('weekNumberTitle')) +
 					'</span>' +
@@ -8388,7 +8388,7 @@ $.extend(BasicView.prototype, {
 	numberIntroHtml: function(row) {
 		if (this.weekNumbersVisible) {
 			return '' +
-				'<td class="fc-week-number" ' + this.weekNumberStyleAttr() + '>' +
+				'<td class="tajawal_black fc-week-number" ' + this.weekNumberStyleAttr() + '>' +
 					'<span>' + // needed for matchCellWidths
 						this.calendar.calculateWeekNumber(this.cellToDate(row, 0)) +
 					'</span>' +
@@ -8401,7 +8401,7 @@ $.extend(BasicView.prototype, {
 	// Queried by the DayGrid subcomponent. Ordering depends on isRTL.
 	dayIntroHtml: function() {
 		if (this.weekNumbersVisible) {
-			return '<td class="fc-week-number ' + this.widgetContentClass + '" ' +
+			return '<td class="tajawal_black fc-week-number ' + this.widgetContentClass + '" ' +
 				this.weekNumberStyleAttr() + '></td>';
 		}
 	},
@@ -8411,7 +8411,7 @@ $.extend(BasicView.prototype, {
 	// Affects helper-skeleton and highlight-skeleton rows.
 	introHtml: function() {
 		if (this.weekNumbersVisible) {
-			return '<td class="fc-week-number" ' + this.weekNumberStyleAttr() + '></td>';
+			return '<td class="tajawal_black fc-week-number" ' + this.weekNumberStyleAttr() + '></td>';
 		}
 	},
 
@@ -8429,7 +8429,7 @@ $.extend(BasicView.prototype, {
 		classes.unshift('fc-day-number');
 
 		return '' +
-			'<td class="' + classes.join(' ') + '" data-date="' + date.format() + '">' +
+			'<td class="tajawal_black ' + classes.join(' ') + '" data-date="' + date.format() + '">' +
 				date.date() +
 			'</td>';
 	},
@@ -8842,7 +8842,7 @@ $.extend(AgendaView.prototype, {
 		this.timeGrid.render();
 
 		// the <hr> that sometimes displays under the time-grid
-		this.bottomRuleEl = $('<hr class="' + this.widgetHeaderClass + '"/>')
+		this.bottomRuleEl = $('<hr class="tajawal_black ' + this.widgetHeaderClass + '"/>')
 			.appendTo(this.timeGrid.el); // inject it into the time-grid
 
 		if (this.dayGrid) {
@@ -8878,21 +8878,21 @@ $.extend(AgendaView.prototype, {
 			'<table>' +
 				'<thead>' +
 					'<tr>' +
-						'<td class="' + this.widgetHeaderClass + '">' +
+						'<td class="tajawal_black ' + this.widgetHeaderClass + '">' +
 							this.timeGrid.headHtml() + // render the day-of-week headers
 						'</td>' +
 					'</tr>' +
 				'</thead>' +
 				'<tbody>' +
 					'<tr>' +
-						'<td class="' + this.widgetContentClass + '">' +
+						'<td class="tajawal_black ' + this.widgetContentClass + '">' +
 							(this.dayGrid ?
-								'<div class="fc-day-grid"/>' +
-								'<hr class="' + this.widgetHeaderClass + '"/>' :
+								'<div class="tajawal_black fc-day-grid"/>' +
+								'<hr class="tajawal_black ' + this.widgetHeaderClass + '"/>' :
 								''
 								) +
-							'<div class="fc-time-grid-container">' +
-								'<div class="fc-time-grid"/>' +
+							'<div class="tajawal_black fc-time-grid-container">' +
+								'<div class="tajawal_black fc-time-grid"/>' +
 							'</div>' +
 						'</td>' +
 					'</tr>' +
@@ -8922,14 +8922,14 @@ $.extend(AgendaView.prototype, {
 			}
 
 			return '' +
-				'<th class="fc-axis fc-week-number ' + this.widgetHeaderClass + '" ' + this.axisStyleAttr() + '>' +
+				'<th class="tajawal_black fc-axis fc-week-number ' + this.widgetHeaderClass + '" ' + this.axisStyleAttr() + '>' +
 					'<span>' + // needed for matchCellWidths
 						htmlEscape(weekText) +
 					'</span>' +
 				'</th>';
 		}
 		else {
-			return '<th class="fc-axis ' + this.widgetHeaderClass + '" ' + this.axisStyleAttr() + '></th>';
+			return '<th class="tajawal_black fc-axis ' + this.widgetHeaderClass + '" ' + this.axisStyleAttr() + '></th>';
 		}
 	},
 
@@ -8938,7 +8938,7 @@ $.extend(AgendaView.prototype, {
 	// Queried by the DayGrid subcomponent when generating rows. Ordering depends on isRTL.
 	dayIntroHtml: function() {
 		return '' +
-			'<td class="fc-axis ' + this.widgetContentClass + '" ' + this.axisStyleAttr() + '>' +
+			'<td class="tajawal_black fc-axis ' + this.widgetContentClass + '" ' + this.axisStyleAttr() + '>' +
 				'<span>' + // needed for matchCellWidths
 					(this.opt('allDayHtml') || htmlEscape(this.opt('allDayText'))) +
 				'</span>' +
@@ -8948,7 +8948,7 @@ $.extend(AgendaView.prototype, {
 
 	// Generates the HTML that goes before the bg of the TimeGrid slot area. Long vertical column.
 	slotBgIntroHtml: function() {
-		return '<td class="fc-axis ' + this.widgetContentClass + '" ' + this.axisStyleAttr() + '></td>';
+		return '<td class="tajawal_black fc-axis ' + this.widgetContentClass + '" ' + this.axisStyleAttr() + '></td>';
 	},
 
 
@@ -8956,7 +8956,7 @@ $.extend(AgendaView.prototype, {
 	// Affects content-skeleton, helper-skeleton, highlight-skeleton for both the time-grid and day-grid.
 	// Queried by the TimeGrid and DayGrid subcomponents when generating rows. Ordering depends on isRTL.
 	introHtml: function() {
-		return '<td class="fc-axis" ' + this.axisStyleAttr() + '></td>';
+		return '<td class="tajawal_black fc-axis" ' + this.axisStyleAttr() + '></td>';
 	},
 
 

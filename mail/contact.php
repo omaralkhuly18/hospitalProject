@@ -16,16 +16,16 @@ $address  = $_POST['address'];
 $comments = $_POST['comments'];
 
 if(trim($name) == '') {
-	echo '<div class="alert alert-error">You must enter your name.</div>';
+	echo '<div class="tajawal_black alert alert-error">You must enter your name.</div>';
 	exit();
 } else if(trim($email) == '') {
-	echo '<div class="alert alert-error">You must enter email address.</div>';
+	echo '<div class="tajawal_black alert alert-error">You must enter email address.</div>';
 	exit();
 } else if(!isEmail($email)) {
-	echo '<div class="alert alert-error">You must enter a valid email address.</div>';
+	echo '<div class="tajawal_black alert alert-error">You must enter a valid email address.</div>';
 	exit();
 } else if(trim($phone) == '') {
-	echo '<div class="alert alert-error">You must enter your phone number.</div>';
+	echo '<div class="tajawal_black alert alert-error">You must enter your phone number.</div>';
 	exit();
 }
 

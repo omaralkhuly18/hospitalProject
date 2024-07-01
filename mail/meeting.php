@@ -15,16 +15,16 @@ $mphone    = $_POST['mphone'];
 $mcase  = $_POST['mcase'];
 
 if(trim($mname) == '') {
-	echo '<div class="alert alert-error">You must enter your name.</div>';
+	echo '<div class="tajawal_black alert alert-error">You must enter your name.</div>';
 	exit();
 } else if(trim($memail) == '') {
-	echo '<div class="alert alert-error">You must enter email address.</div>';
+	echo '<div class="tajawal_black alert alert-error">You must enter email address.</div>';
 	exit();
 } else if(!isEmail($memail)) {
-	echo '<div class="alert alert-error">You must enter a valid email address.</div>';
+	echo '<div class="tajawal_black alert alert-error">You must enter a valid email address.</div>';
 	exit();
 } else if(trim($mphone) == '') {
-	echo '<div class="alert alert-error">You must enter your phone number.</div>';
+	echo '<div class="tajawal_black alert alert-error">You must enter your phone number.</div>';
 	exit();
 }
 
