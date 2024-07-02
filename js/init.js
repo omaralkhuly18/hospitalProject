@@ -1,4 +1,19 @@
+
 // js update
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    var navSticky = document.getElementById("nav_sticky");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		navSticky.style.position = "fixed";
+		navSticky.style.width = "100%";
+		navSticky.style.top = "0";
+    } else {
+		navSticky.style.position = "relative";
+		navSticky.style.top = "auto";
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     var infoToggle = document.getElementById('info-toggle');
     var infoContent = document.getElementById('info-content');
@@ -24,6 +39,19 @@ document.addEventListener('DOMContentLoaded', function() {
 			infoContent.style.display = 'none';
         }
     });
+});
+
+$(document).ready(function(){
+	$('#nav-icon1').click(function(){
+		$(this).toggleClass('open');
+	});
+});
+var icon = document.getElementById("nav-icon1");
+var nav = document.getElementById('nav');
+var blue = document.getElementById("blue");
+icon.addEventListener('click', function() {
+	nav.classList.toggle('show');
+  blue.classList.toggle('slide');
 });
 
 // document.addEventListener("DOMContentLoaded", function() {
