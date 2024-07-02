@@ -1,3 +1,69 @@
+// js update
+document.addEventListener('DOMContentLoaded', function() {
+    var infoToggle = document.getElementById('info-toggle');
+    var infoContent = document.getElementById('info-content');
+    
+    infoToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (infoContent.style.opacity === '0' || infoContent.style.opacity === '') {
+            infoContent.style.opacity = '1';
+			infoContent.style.display = 'block';
+            infoContent.style.zIndex = '9999'; // إضافة z-index
+        } else {
+            infoContent.style.opacity = '0';
+            setTimeout(function() {
+                infoContent.style.zIndex = '0'; // إعادة z-index بعد الاختفاء
+            }, 300); // مطابق لمدة الانتقال
+        }
+    });
+	window.addEventListener('scroll', function() {
+        var scrollPosition = window.scrollY;
+        if (scrollPosition > 0) {
+            infoContent.style.zIndex = '0';
+			infoContent.style.opacity = '0';
+			infoContent.style.display = 'none';
+        }
+    });
+});
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     var icon = document.querySelector(".toggleIcon");
+
+//     icon.addEventListener("click", function() {
+//         if (icon.classList.contains("fa-bars")) {
+//             icon.classList.remove("fa-bars");
+//             icon.classList.add("fa-bars-staggered");
+//             icon.style.color = '#616997'; // تغيير اللون عند التبديل
+//         } else {
+//             icon.classList.remove("fa-bars-staggered");
+//             icon.classList.add("fa-bars");
+//             icon.style.color = ''; // إعادة اللون الافتراضي
+//         }
+//     });
+// });
+document.addEventListener("DOMContentLoaded", function() {
+    var icon = document.querySelector(".toggleIcon");
+
+    icon.addEventListener("click", function() {
+        icon.classList.toggle("toggled");
+        if (icon.classList.contains("fa-bars")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-bars-staggered");
+        } else {
+            icon.classList.remove("fa-bars-staggered");
+            icon.classList.add("fa-bars");
+        }
+    });
+	window.addEventListener('scroll', function() {
+        var scrollPosition = window.scrollY;
+        if (scrollPosition > 0) {
+			icon.classList.remove("fa-bars-staggered");
+            icon.classList.add("fa-bars");
+        }
+    });
+});
+
+// js update
 jQuery(function($){
 	"use strict";
 
@@ -17,7 +83,7 @@ var SOLICITOR = window.SOLICITOR || {};
 			$('#message').hide();
 		
 			$('#submit')
-				.after('<img src="images/assets/ajax-loader.gif" class="loader" />')
+				.after('<img src="images/assets/ajax-loader.gif" class="tajawal_black loader" />')
 				.attr('disabled','disabled');
 		
 			$.post(action, {
@@ -55,7 +121,7 @@ var SOLICITOR = window.SOLICITOR || {};
 			$('#mmessage').hide();
 		
 			$('#msubmit')
-				.after('<img src="images/assets/ajax-loader.gif" class="loader" />')
+				.after('<img src="images/assets/ajax-loader.gif" class="tajawal_black loader" />')
 				.attr('disabled','disabled');
 		
 			$.post(action, {
@@ -167,7 +233,7 @@ var SOLICITOR = window.SOLICITOR || {};
 			var twitterTweets = twitterInstance.attr("data-tweets-count") ? twitterInstance.attr("data-tweets-count") : "1"
 			twitterInstance.twittie({
             	dateFormat: '%b. %d, %Y',
-            	template: '<li><i class="fa fa-twitter"></i> {{tweet}} <span class="tweet-date">{{date}}</span></li>',
+            	template: '<li><i class="fa fa-twitter"></i> {{tweet}} <span class="tajawal_black tweet-date">{{date}}</span></li>',
             	count: twitterTweets,
             	hideReplies: true
         	});
@@ -472,19 +538,19 @@ $(document).ready(function(){
 	
 	
 	
-	$('#info-toggle').on('click',function(e){
-		var content = $('#info-content').is(":visible");
-		$('#info-content .flexslider .flex-nav-prev a, #info-content .flexslider .flex-nav-next a').animate({
-					opacity: 0
-				}, 100, "easeOutQuad");
-        $('#info-content').slideToggle(500);
-		if (!content) {
-		$('#info-content .flexslider .flex-nav-prev a, #info-content .flexslider .flex-nav-next a').animate({
-					opacity: 1
-				}, 500, "easeOutQuad");
-		}
-		e.preventDefault();
-	});
+	// $('#info-toggle').on('click',function(e){
+	// 	var content = $('#info-content').is(":visible");
+	// 	$('#info-content .flexslider .flex-nav-prev a, #info-content .flexslider .flex-nav-next a').animate({
+	// 				opacity: 0
+	// 			}, 100, "easeOutQuad");
+    //     $('#info-content').slideToggle(500);
+	// 	if (!content) {
+	// 	$('#info-content .flexslider .flex-nav-prev a, #info-content .flexslider .flex-nav-next a').animate({
+	// 				opacity: 1
+	// 			}, 500, "easeOutQuad");
+	// 	}
+	// 	e.preventDefault();
+	// });
 });
 /* FlexSlider Equal Heights for Vertical Slider */
 function setEqualHeight(selector) {
