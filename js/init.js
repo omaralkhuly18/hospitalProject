@@ -46,6 +46,12 @@ $(document).ready(function(){
 		$(this).toggleClass('open');
 	});
 });
+
+document.getElementById('close-arrow').addEventListener('click', function() {
+	document.getElementById('nav-icon1').classList.remove('open');
+	document.getElementById('nav').classList.toggle('show');
+	document.getElementById('blue').classList.toggle('slide');
+});
 var icon = document.getElementById("nav-icon1");
 var nav = document.getElementById('nav');
 var blue = document.getElementById("blue");
@@ -53,7 +59,6 @@ icon.addEventListener('click', function() {
 	nav.classList.toggle('show');
   blue.classList.toggle('slide');
 });
-
 // document.addEventListener("DOMContentLoaded", function() {
 //     var icon = document.querySelector(".toggleIcon");
 
@@ -90,6 +95,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+
 
 // js update
 jQuery(function($){
