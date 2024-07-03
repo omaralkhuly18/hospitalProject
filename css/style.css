@@ -318,9 +318,13 @@ a.phone__number:hover,
 	}
 }
 
-.topbar .update_styke {
-	display: flex !important;
-	justify-content: space-between;
+
+
+@media screen and (max-width: 1768px) and (min-width: 401px) {
+	.topbar .update_styke {
+		display: flex;
+		justify-content: space-between;
+	}
 }
 
 .topbar .icons_header {
