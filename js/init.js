@@ -50,7 +50,7 @@ $(document).ready(function(){
 document.getElementById('close-arrow').addEventListener('click', function() {
 	document.getElementById('nav-icon1').classList.remove('open');
 	document.getElementById('nav').classList.toggle('show');
-	document.getElementById('blue').classList.toggle('slide');
+	document.getElementById('blue').classList.remove('slide');
 });
 var icon = document.getElementById("nav-icon1");
 var nav = document.getElementById('nav');
